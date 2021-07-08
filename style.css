@@ -1,0 +1,129 @@
+/* RESET CSS */
+*{
+    margin:0px;
+    padding:0px;
+    border:0px;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ol, li, ol {
+    list-style: none;
+}
+/* CSS CODES */
+body{
+    background-color: rgb(8,8,8);
+    color:white;
+    font-family: sans-serif;
+}
+.container {
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.container .bouble {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.container #btn {
+    width: 100px;
+    height: 50px;
+    background-color:tomato;
+    border-radius: 8px;
+    font-size:18px;
+    font-weight: lighter;
+    color:whitesmoke;
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0px 0px 10px tomato;
+    transition: 300ms all;
+}
+.container #btn::after {
+    content: "";
+    width: 100px;
+    height: 50px;
+    top:0px;
+    left:0px;
+    box-shadow: 0px 0px 10px tomato;
+    position: absolute;
+    border-radius: 8px;
+    visibility: hidden;
+} 
+
+.container #btn::before {
+    content: "";
+    width: 100px;
+    height: 50px;
+    top:0px;
+    left:0px;
+    box-shadow: 0px 0px 10px tomato;
+    position: absolute;
+    transition: 300ms all;
+    border-radius: 8px;
+    visibility: hidden;
+} 
+.container #btn:hover::after {
+    visibility: visible;
+    animation:btnAfterAnm 1s ;
+}
+.container #btn:hover::before {
+    visibility: visible;
+    animation:btnBeforeAnm 1s ;
+}
+@keyframes btnAfterAnm {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0px 0px 10px tomato;
+    }
+    100% {
+        transform: scale(2);
+        box-shadow: 0px 0px 100px tomato;
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+@keyframes btnBeforeAnm {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0px 0px 10px tomato;
+    }
+    100% {
+        transform: scale(2);
+        box-shadow: 0px 0px 100px tomato;
+        opacity: 0;
+        left: -100%;
+    }
+}
+@keyframes boubleAnm {
+    0% {
+        visibility: visible;
+        box-shadow: 0px 0px 10px tomato;    
+        width: 0px;           
+        height: 0px;           
+    }
+    50% {
+        box-shadow: 0px 0px 300px tomato;               
+        background:none;
+        opacity: 1;
+        width: 350px;           
+        height: 350px;  
+    }   
+    100% {
+        width: 700px;
+        height: 700px;
+        opacity: 0;
+    }
+}
